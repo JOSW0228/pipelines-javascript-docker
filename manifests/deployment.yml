@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: joswpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: joswpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: joswpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: joswpipelinesjavascriptdocker 
+          image: user04acr.azurecr.io/joswpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
